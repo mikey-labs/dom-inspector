@@ -1,2 +1,2 @@
 # dom-inspector
-a html tag node insepector
+a html tag node inspector

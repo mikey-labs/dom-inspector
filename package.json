@@ -1,0 +1,61 @@
+{
+    "name": "@zhengxy/dom-inspector",
+    "version": "0.0.1-beta.0",
+    "description": "a html tag node inspector",
+    "main": "dist/dom-inspector.cjs.js",
+    "module": "dist/dom-inspector.esm.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "start": "wds --node-resolve --app-index test/test.html --root-dir ./ --open",
+        "dev": "node ./build.mjs -w",
+        "build": "pnpm clear && pnpm build:bundle && pnpm build:types",
+        "clear": "rimraf ./dist",
+        "build:types": "tsc -p ./tsconfig.json",
+        "build:bundle": "node ./build.mjs"
+    },
+    "exports": {
+        ".": {
+            "import": "./dist/dom-inspector.esm.mjs",
+            "require": "./dist/dom-inspector.cjs.js",
+            "default": "./dist/dom-inspector.js"
+        }
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "sideEffects": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mikey-labs/dom-inspector.git"
+    },
+    "keywords": [
+        "dom",
+        "inspector",
+        "html"
+    ],
+    "author": "mikey",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/mikey-labs/dom-inspector/issues"
+    },
+    "homepage": "https://github.com/mikey-labs/dom-inspector/blob/main/README.md",
+    "devDependencies": {
+        "@babel/core": "^7.23.2",
+        "@babel/preset-env": "^7.23.2",
+        "@babel/preset-typescript": "^7.23.2",
+        "esbuild": "^0.19.5",
+        "esbuild-plugin-babel": "^0.2.3",
+        "esbuild-plugin-pipe": "^0.2.0",
+        "prettier": "^2.8.4",
+        "rimraf": "^4.4.1",
+        "typescript": "^4.9.5"
+    },
+    "dependencies": {
+        "@zhengxy/use": "0.0.8-beta.2"
+    },
+    "publishConfig": {
+        "access": "public",
+        "tag": "beta"
+    }
+}

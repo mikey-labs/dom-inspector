@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    li{
+      height: 40px;
+      background: aliceblue;
+    }
+
+  </style>
+    <script type="module">
+      import {DOMInspector} from "../dist/dom-inspector.esm.mjs";
+      new DOMInspector({
+        enable:true,
+        onDid:function (target) {
+          console.log(target)
+        }
+      });
+    </script>
+</head>
+<body>
+<button onclick="alert(1)">button</button>
+  <ul>
+    <li>第一段</li>
+    <li>第二段</li>
+    <li>第三段</li>
+    <li>第四段</li>
+  </ul>
+<div>
+  <div style="border: 10px solid #888;">text</div>
+  <button>按钮</button>
+</div>
+</body>
+</html>
